@@ -1,0 +1,50 @@
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <span>{{courseName}}</span>
+            </td>
+            <td>
+                <strong>{{courseName}}</strong>
+            </td>
+            <td>
+                <strong>{{cityName}}</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" [value]="courseName">
+            </td>
+            <td>
+                <p [class]="className">This is para</p>
+            </td>
+            <td>
+                <input [type]="inputType">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click) = "showWelcomeMessage()" >Shoe Message</button>
+            </td>
+            <td>
+                <select name="" id="" (change)="onStateChanged()">
+                    <option value="">Pune</option>
+                    <option value="">Kolkata</option>
+                    <option value="">Chennai</option>
+                    <option value="">Mumbai</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" [(ngModel)]="courseName" name="input">
+            </td>
+            <td>
+                <button (click)="changeCourseName('dot net')">Change to dot net</button>
+            </td>
+            <td>
+                <button (click)="changeCourseName('Java')">Change to Java</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

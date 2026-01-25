@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">User Master</div>
+        <div class="card-body">
+            <form [formGroup]="userForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your full name" name="name" />
+                     @if(userForm.controls["name"].touched || userForm.controls["name"].dirty) {
+                    <div class="text-danger">
+                        --{{ userForm.controls["name"].errors | json }}--
+                        @if(userForm.controls["name"].errors?.['required']) {
+                        <span>This is required</span>
+                        } @else if(userForm.controls["name"].errors?.['minlength']) {
+                        <span>Min 5 char is required</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter username" name="username"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email address" name="email" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="password" placeholder="Enter password" name="password" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" formControlName="city" class="form-control" name="city" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" formControlName="state" class="form-control" name="state" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="text" formControlName="pincode" class="form-control" name="pincode" />
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save</button>
+                    <button type="button" class="btn btn-secondary ms-2">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<p>user-master works!</p>

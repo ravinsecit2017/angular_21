@@ -1,0 +1,63 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">User Master</div>
+        <div class="card-body">
+            <form (ngSubmit)="saveUser()" #userForm="ngForm">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input class="form-control" id="name" placeholder="Enter your full name" name="name" #name="ngModel" [(ngModel)]="userObj.name" required minlength="5" />
+                    @if(name.touched || name.dirty) {
+                    <div class="text-danger">
+                        --{{ name.errors | json }}--
+                        @if(name.errors?.['required']) {
+                        <span>This is required</span>
+                        } @else if(name.errors?.['minlength']) {
+                        <span>Min 5 char is required</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input class="form-control" id="username" placeholder="Enter username" name="username" #name="ngModel" [(ngModel)]="userObj.username"
+                        required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email address" name="email" [(ngModel)]="userObj.email" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" [(ngModel)]="userObj.password"
+                        required />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label">City</label>
+                        <input class="form-control" id="city" placeholder="Enter city" name="city" [(ngModel)]="userObj.city" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">State</label>
+                        <input class="form-control" id="state" placeholder="Enter state" name="state" [(ngModel)]="userObj.state" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">Pincode</label>
+                        <input class="form-control" id="pincode" placeholder="Enter pincode" name="pincode" [(ngModel)]="userObj.pincode" />
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save</button>
+                    <button type="button" class="btn btn-secondary ms-2"
+                        (click)="userObj = {id:0,name:'',username:'',email:'',password:'',city:'',state:'',pincode:''}">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<p>user-master works!</p>

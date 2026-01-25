@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isOffercodeAvl"> Do you have offer code
+        <br>
+    </div>
+    @if(isOffercodeAvl){
+    <div class="col-3">
+        <input type="text" class="form-control" placeholder="Enter offer code">
+    </div>
+    }
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        @if(isSuccessDivVisible()) {
+        <div class="bg-success p-3">
+            Success Div
+        </div>
+        }
+        <div class="bg-danger p-3">
+            Error Div
+        </div>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="changeDiv()">Toggle </button>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="text" placeholder="%" class="form-control" [(ngModel)]="studentTotalMark">
+    </div>
+    <div class="col-3">
+        @if(studentTotalMark>=70) {
+        <strong class="text-success">Student has A grade</strong>
+        } @else if (studentTotalMark < 70 && studentTotalMark>= 50) {
+            <span class="text-warning">Student has B grade</span>
+            } @else if (studentTotalMark <50 && studentTotalMark>= 35) {
+                <span class="text-primary">Student has C grade</span>
+                } @else {
+                @if(studentTotalMark == 0) {
+                <span>Please enter student marks</span>
+                } @else {
+                <span class="text-danger">Student Fails</span>
+                }
+                }
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        <ul>
+            @for(item of offerList; track $index) {
+            <li>{{item}}</li>
+            }
+        </ul>
+    </div>
+    <div class="col-8">
+        @for(item of productcategoryList; track $index) {
+        <button class="btn btn-primary mx-2">{{item}}</button>
+        }
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr. no</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of employeeList; track $index) {
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.city}}</td>
+                    <!-- @if(item.isActive) {
+                        <strong class="text-success">Active</strong>
+                    } @else {
+                        <strong class="text-danger">De-Active</strong>
+                    }    -->
+                     <strong [ngClass]="item.isActive ? 'text-success' : 'text-danger'">
+                        {{item.isActive ? 'Active' : 'De-Active'}}
+                    </strong>   
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
