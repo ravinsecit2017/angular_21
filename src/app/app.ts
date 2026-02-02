@@ -1,12 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { Variables } from "./component/variables/variables";
-import { DataBindings } from "./component/data-bindings/data-bindings";
+import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, RouterOutlet, RouterLink],
+  imports: [FormsModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
