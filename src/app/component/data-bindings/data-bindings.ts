@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../service/master';
 
 @Component({
   selector: 'app-data-bindings',
@@ -8,6 +9,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './data-bindings.css',
 })
 export class DataBindings {
+  masterSrv = inject(Master)
+  constructor() {
+      const result = this.masterSrv.addTwoNum(10,17);
+      console.log('data bindings', result);
+    }
+
   courseName: string = 'Angular version 21';
   cityName = 'Nagpur';
 

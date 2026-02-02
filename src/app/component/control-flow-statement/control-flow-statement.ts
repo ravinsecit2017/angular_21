@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, signal, Signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../service/master';
 
 @Component({
   selector: 'app-control-flow-statement',
@@ -9,6 +10,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './control-flow-statement.css',
 })
 export class ControlFlowStatement {
+
+  constructor(masterSrv: Master) {
+    const result = masterSrv.addTwoNum(20,14);
+    console.log('app-control-flow-statement', result);
+  }
   isOffercodeAvl: boolean = false;
   studentTotalMark: number = 0;
 
@@ -35,4 +41,5 @@ export class ControlFlowStatement {
   changeDiv() {
     this.isSuccessDivVisible.set(true);
   }
+
 }
