@@ -1,7 +1,7 @@
 <div class="d-flex">
 
   <!-- Sidebar -->
-  <nav class="bg-dark text-white p-3 vh-100" style="width:200px;">
+  <nav class="bg-dark text-white p-3 responsive" style="width:200px;">
     <h4 class="text-center mb-4">My App</h4>
 
     <ul class="nav nav-pills flex-column">
@@ -36,14 +36,17 @@
         <a class="nav-link text-white" routerLink="signal-form">Signal Form</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="login">Login</a>
+        <a class="nav-link text-white" routerLink="employee-app">Employee App</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="life-cycle-ex">Life Cycle Ex</a>
       </li>
     </ul>
   </nav>
 
   <!-- Main Content -->
-  <main class="flex-fill p-4">
+  <div class="container-fluid">
     <router-outlet></router-outlet>
-  </main>
+  </div>
 
 </div>

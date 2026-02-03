@@ -1,1 +1,59 @@
-<p>variables works!</p>
+<div class="row">
+    <div class="col-3">
+        courseName => {{ courseName }}
+        <br>
+        upperCase -> {{ courseName | uppercase }}
+    </div>
+    <div class="col-3">
+        courseName => {{ courseName }}
+        <br>
+        courseName => {{ courseName | lowercase }}
+    </div>
+    <div class="col-3">
+        courseName => {{ courseDuration }}
+        <br>
+        courseName => {{ courseDuration | titlecase }}
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        currentDate => {{ currentDate }}
+    </div>
+    <div class="col-2">
+        currentDate => {{ currentDate | date:'short' }}
+    </div>
+    <div class="col-2">
+        currentDate => {{ currentDate | date:'dd-MM-yyyy' }}
+    </div>
+    <div class="col-2">
+        currentDate => {{ currentDate | date:'dd/MM/yyyy' }}
+    </div>
+    <div class="col-2">
+        currentDate => {{ currentDate | date:'dd-MMM-yyyy' }}
+    </div>
+    <div class="col-2">
+        currentTime => {{ currentDate | date:'hh:mm:ss' }}
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        rollNoArray => {{ rollNoArray }}
+    </div>
+    <div class="col-3">
+        slice => {{ rollNoArray | slice:0:3 }}
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-3">
+        {{studObj}}
+    </div>
+    <div class="col-4">
+        {{ studObj | json }}
+    </div>
+</div>
