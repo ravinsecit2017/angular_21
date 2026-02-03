@@ -13,6 +13,8 @@ import { SignaFormEx } from './component/signa-form-ex/signa-form-ex';
 import { Login } from './component/login/login';
 import { Layout } from './component/layout/layout';
 import { authGuard } from './guards/auth-guard';
+import { EmployeeApp } from './component/employee-app/employee-app';
+import { LifeCycleEx } from './component/life-cycle-ex/life-cycle-ex';
 
 export const routes: Routes = [
     {
@@ -69,6 +71,14 @@ export const routes: Routes = [
                 path: 'signal-form',
                 component: SignaFormEx
             },
+            {
+                path: 'employee-app',
+                component: EmployeeApp
+            },
+            {
+                path: 'life-cycle-ex',
+                component: LifeCycleEx
+            }
         ]
     },
     {

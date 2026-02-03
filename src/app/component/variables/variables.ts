@@ -1,13 +1,15 @@
+import { DatePipe, JsonPipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-variables',
-  imports: [],
+  imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, SlicePipe, JsonPipe],
   templateUrl: './variables.html',
   styleUrl: './variables.css',
 })
 export class Variables {
   courseName: string = 'Angular';
+  courseDuration = 'this course duration is 40 hours';
   currentVersion = 'v21.1';
   rollNo: number = 134;
   productPrice = 1200.0;
